@@ -1,0 +1,18 @@
+
+Employee Termination Server ((username)) ((sluid))
+
+Please revoke staff access for (username) (sluid)  
+
+Convert account from STAFF to STU/Alumni/Retired 
+
+Effective Date:  (effectiveDate)
+
+Term Type: (termStatus)
+
+Supervisor Email:  (supervisorEmail)
+
+Forward Former Staff email: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Manually remove the person from listserv's 

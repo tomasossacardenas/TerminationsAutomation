@@ -1,0 +1,153 @@
+APPLICATIONS
+
+Employee Termination Applications ((username)) ((sluid))
+
+Please revoke access for (username) (sluid)  
+
+(Convert task to “Push New AD account for (username) (sluid)” assigned to apps for STAFF to STU 
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Supervisor Email:  (supervisorEmail)
+
+
+Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
+
+XSVM screen  
+
+Screenshot prior to making changes. 
+
+Set  staff status to “Former” 
+
+Copy “Operator ID” 
+
+XSOD screen paste OPERATOR ID.  
+
+Screenshot before making changes.  
+
+Remove “*” 
+
+Max UI set to -0- 
+
+Max login set to -0- 
+
+Check STAC for current active class history. Add screen shot 
+
+If yes, needs Apps task for STAFF to STU 
+
+IASU for Alumni. 
+
+If yes, needs Apps task for STAFF to STU 
+
+---------------------------------------------------------------------------------------------------
+INFOSEC
+
+Employee Termination InfoSec ((username)) ((sluid))
+
+Please communicate with HR and collect hardware associated to terminated personnel.  
+
+Employee Term: (username) (sluid)  
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Location:  
+
+Supervisor Email:  (supervisorEmail)
+
+Data Transfer: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 
+
+---------------------------------------------------------------------------------------------------
+SERVER
+
+Employee Termination Server ((username)) ((sluid))
+
+Please revoke staff access for (username) (sluid)  
+
+Convert account from STAFF to STU/Alumni/Retired 
+
+Effective Date:  (effectiveDate)
+
+Term Type: (termStatus)
+
+Supervisor Email:  (supervisorEmail)
+
+Forward Former Staff email: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Manually remove the person from listserv's 
+
+---------------------------------------------------------------------------------------------------
+SALESFORCE
+
+Employee Termination Salesforce ((username)) ((sluid))
+
+Revoke Salesforce access to the following user: 
+
+Username: (username) 
+
+Email: : (username)@saintleo.edu 
+
+Effective Date:  (effectiveDate)
+
+Supervisor email:  (supervisorEmail) 
+
+---------------------------------------------------------------------------------------------------
+TELECOM
+
+Employee Termination Telecom ((username)) ((sluid)) 
+
+Revoke access to Telecom Services and collect phone needed. (username) (sluid) 
+
+Effective Date: (effectiveDate)
+
+Current Extension:  
+
+Forward Extension to:  
+
+Forward voicemail:  
+
+Forward voicemail to: 
+
+Location: 
+
+Supervisor Email: (supervisorEmail)
+
+---------------------------------------------------------------------------------------------------
+HARDWARE
+
+Employee Termination Hardware ((username)) ((sluid))
+
+Please communicate with InfoSec for reporting department and collect all hardware associated to terminated personnel.  
+
+Employee Term: (username) (sluid) 
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Position:
+
+Supervisor Email:  (supervisorEmail)
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 
+
+
+
+

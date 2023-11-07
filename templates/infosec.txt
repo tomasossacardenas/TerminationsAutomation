@@ -1,0 +1,23 @@
+Employee Termintion InfoSec ((username)) ((sluid))
+
+Please communicate with HR and collect hardware associated to terminated personnel.  
+
+Employee Term: (username) (sluid)  
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Location:  
+
+Supervisor Email:  (supervisorEmail)
+
+Data Transfer: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 

@@ -1,0 +1,40 @@
+Employee Termination Applications ((username)) ((sluid))
+
+Please revoke access for (username) (sluid)  
+
+(Convert task to “Push New AD account for (username) (sluid)” assigned to apps for STAFF to STU 
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Supervisor Email:  (supervisorEmail)
+
+
+Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
+
+XSVM screen  
+
+Screenshot prior to making changes. 
+
+Set  staff status to “Former” 
+
+Copy “Operator ID” 
+
+XSOD screen paste OPERATOR ID.  
+
+Screenshot before making changes.  
+
+Remove “*” 
+
+Max UI set to -0- 
+
+Max login set to -0- 
+
+Check STAC for current active class history. Add screen shot 
+
+If yes, needs Apps task for STAFF to STU 
+
+IASU for Alumni. 
+
+If yes, needs Apps task for STAFF to STU 

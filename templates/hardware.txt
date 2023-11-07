@@ -1,0 +1,21 @@
+Employee Termination Hardware ((username)) ((sluid))
+
+Please communicate with InfoSec for reporting department and collect all hardware associated to terminated personnel.  
+
+Employee Term: (username) (sluid) 
+
+Term Status: (termStatus)
+
+Effective Date: (effectiveDate)
+
+Position:
+
+Supervisor Email:  (supervisorEmail)
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 
+
+ 

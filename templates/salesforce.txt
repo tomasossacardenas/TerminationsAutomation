@@ -1,0 +1,13 @@
+Employee Termination Salesforce ((username)) ((sluid))
+
+Revoke Salesforce access to the following user: 
+
+Username: (username) 
+
+Email: : (username)@saintleo.edu 
+
+Effective Date:  (effectiveDate)
+
+Supervisor email:  (supervisorEmail) 
+
+ 

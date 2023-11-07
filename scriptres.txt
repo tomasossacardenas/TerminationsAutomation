@@ -1,0 +1,153 @@
+APPLICATIONS
+
+Employee Termination Applications (samantha.flynn) (1078783)
+
+Please revoke access for samantha.flynn 1078783  
+
+(Convert task to “Push New AD account for samantha.flynn 1078783” assigned to apps for STAFF to STU 
+
+Term Status: Voluntary
+
+Effective Date: 08/12/2023
+
+Supervisor Email:  matthew.helms@saintleo.edu
+
+
+Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
+
+XSVM screen  
+
+Screenshot prior to making changes. 
+
+Set  staff status to “Former” 
+
+Copy “Operator ID” 
+
+XSOD screen paste OPERATOR ID.  
+
+Screenshot before making changes.  
+
+Remove “*” 
+
+Max UI set to -0- 
+
+Max login set to -0- 
+
+Check STAC for current active class history. Add screen shot 
+
+If yes, needs Apps task for STAFF to STU 
+
+IASU for Alumni. 
+
+If yes, needs Apps task for STAFF to STU 
+
+---------------------------------------------------------------------------------------------------
+INFOSEC
+
+Employee Termination InfoSec (samantha.flynn) (1078783)
+
+Please communicate with HR and collect hardware associated to terminated personnel.  
+
+Employee Term: samantha.flynn 1078783  
+
+Term Status: Voluntary
+
+Effective Date: 08/12/2023
+
+Location:  
+
+Supervisor Email:  matthew.helms@saintleo.edu
+
+Data Transfer: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 
+
+---------------------------------------------------------------------------------------------------
+SERVER
+
+Employee Termination Server (samantha.flynn) (1078783)
+
+Please revoke staff access for samantha.flynn 1078783  
+
+Convert account from STAFF to STU/Alumni/Retired 
+
+Effective Date:  08/12/2023
+
+Term Type: Voluntary
+
+Supervisor Email:  matthew.helms@saintleo.edu
+
+Forward Former Staff email: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Manually remove the person from listserv's 
+
+---------------------------------------------------------------------------------------------------
+SALESFORCE
+
+Employee Termination Salesforce (samantha.flynn) (1078783)
+
+Revoke Salesforce access to the following user: 
+
+Username: samantha.flynn 
+
+Email: : samantha.flynn@saintleo.edu 
+
+Effective Date:  08/12/2023
+
+Supervisor email:  matthew.helms@saintleo.edu 
+
+---------------------------------------------------------------------------------------------------
+TELECOM
+
+Employee Termination Telecom (samantha.flynn) (1078783) 
+
+Revoke access to Telecom Services and collect phone needed. samantha.flynn 1078783 
+
+Effective Date: 08/12/2023
+
+Current Extension:  
+
+Forward Extension to:  
+
+Forward voicemail:  
+
+Forward voicemail to: 
+
+Location: 
+
+Supervisor Email: matthew.helms@saintleo.edu
+
+---------------------------------------------------------------------------------------------------
+HARDWARE
+
+Employee Termination Hardware (samantha.flynn) (1078783)
+
+Please communicate with InfoSec for reporting department and collect all hardware associated to terminated personnel.  
+
+Employee Term: samantha.flynn 1078783 
+
+Term Status: Voluntary
+
+Effective Date: 08/12/2023
+
+Position:
+
+Supervisor Email:  matthew.helms@saintleo.edu
+
+Asset: 
+
+- PC NAME:  
+
+- Asset Tag: 
+
+
+
+
