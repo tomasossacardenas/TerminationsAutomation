@@ -27,7 +27,8 @@ var employee = {
     email:null, 
     id:null, 
     manager:null, 
-    jobTitle:null
+    jobTitle:null,
+    assets:[]
     }
 
 async function goIncident(){
@@ -37,24 +38,37 @@ async function goIncident(){
             password: process.env.APPLICATION_PASSWORD
           }
     })
-    employee.firstName=getCredentials(JSON.stringify(response.data)).workerName.split('.')[0];
-    employee.surName=getCredentials(JSON.stringify(response.data)).workerName.split('.')[1];
-    employee.effectiveDate=getCredentials(JSON.stringify(response.data)).effectiveDate;
-    
+    return response.data    
+}
 
-    //get employee Information
+async function main() {
+    //Fill employee info from incident info: firstName, surname, effectiveDate
+    const incidentInfo=await goIncident();
+    employee.firstName=getCredentials(JSON.stringify(incidentInfo)).workerName.split('.')[0];
+    employee.surName=getCredentials(JSON.stringify(incidentInfo)).workerName.split('.')[1];
+    employee.effectiveDate=getCredentials(JSON.stringify(incidentInfo)).effectiveDate;
+
+    //Fill the rest of employee Information
     personData=await goPerson(employee.firstName,employee.surName);
     employee=fillEmployeeInfo(personData, employee);
 
-    //get Manager email
+    //Fill employee.manager email
     const [managerFirst, managerLast]= employee.manager.split(" ")
-    employeeData=await goPerson(managerFirst,managerLast);
+    var employeeData=await goPerson(managerFirst,managerLast);
     employee.manager= employeeData.email;
+    
+    //Fill employee assets list
+    employee.assets = await goAssets("14b4b761-7071-4d7f-8e50-cca5c69727f3");
+    console.log(employee);
+
+    const temporaryAssets = await getAssetsInfo(employee.assets);
+
+    // Assign the temporary assets array to employee.assets
+    employee.assets = temporaryAssets;
 
     console.log(employee);
 }
-
-goIncident();
+main();
 
 //Get method to retrieve info of a single incident, to get all is: https://helpdesk.saintleo.edu/tas/api/incidents?query=subcategory.name=="TERMINATION"
 
@@ -73,7 +87,67 @@ async function goPerson(firstName, surName){
         
     }catch(error){
         console.log(error)
-    }
-    
-    
+    }   
+}
+
+//Go to assets related to the person id, returns a list of the id's of assets of the person
+async function goAssets(personId){
+    try{
+        var assetUrl=`https://helpdesk.saintleo.edu/tas/api/assetmgmt/assets?linkedTo=person/${personId}`
+        console.log(assetUrl)
+        const response=await axios.get(assetUrl, {
+            auth: {
+                username: process.env.USER,
+                password: process.env.APPLICATION_PASSWORD
+            }
+        })
+        //console.log(JSON.stringify(response.data.dataSet));
+        //console.log(JSON.parse(JSON.stringify(response.data.dataSet)))
+        const data = response.data.dataSet;
+
+        // Create an array to store the "id" values
+        const idList = [];
+
+        // Iterate through the data array and extract "id" values
+        for (const item of data) {
+            idList.push(item.id);
+        }
+
+        return idList;
+        
+    }catch(error){
+        console.log(error)
+    }   
+}
+
+async function getAssetsInfo(assetIds) {
+    const temporaryAssets = [];
+
+    // Use Promise.all to concurrently fetch information for all asset IDs
+    const assetPromises = assetIds.map(async (assetId) => {
+        try {
+            const assetUrl = `https://helpdesk.saintleo.edu/tas/api/assetmgmt/assets/${assetId}`;
+            const response = await axios.get(assetUrl, {
+                auth: {
+                    username: process.env.USER,
+                    password: process.env.APPLICATION_PASSWORD
+                }
+            });
+            
+            // Extract the desired data from the response
+            const assetInfo = {
+                'asset-tag': response.data.data['asset-tag'],
+                serial: response.data.data.serial
+            };
+            
+            temporaryAssets.push(assetInfo);
+        } catch (error) {
+            console.log(`Error fetching asset info for ID ${assetId}: ${error}`);
+        }
+    });
+
+    // Wait for all assetPromises to complete
+    await Promise.all(assetPromises);
+
+    return temporaryAssets;
 }
