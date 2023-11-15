@@ -1,3 +1,4 @@
+const fs=require('fs');
 //Given a body of the incident returns the name of the person and the effective date or null if there is something wrong.
 module.exports.getCredentials=function(text){
     // Define regular expressions to match "Worker:" and "effective on" followed by the respective values
@@ -35,3 +36,39 @@ module.exports.fillEmployeeInfo= function (response, employee) {
   
     return employee;
   }
+
+
+  module.exports.fillTemplates = function (templates, employee) {
+    for (const template of templates) {
+        fs.readFile(`./templates/${template}.txt`, 'utf8', (err, templateScript) => {
+            if (err) throw err;
+
+            templateScript = templateScript.replaceAll("(username)", employee.networkLoginName);
+            templateScript = templateScript.replaceAll("(position)", employee.jobTitle);
+            templateScript = templateScript.replaceAll("(sluid)", employee.employeeNumber);
+            templateScript = templateScript.replaceAll("(effectiveDate)", employee.effectiveDate);
+            //templateScript = templateScript.replace("(termStatus)", terminationEntry.value);
+            templateScript = templateScript.replaceAll("(supervisorEmail)", employee.manager);
+            templateScript = templateScript.replace("(assets)", assetsToString(employee.assets));
+
+            fs.writeFile(`./templatesResponses/${template}.txt`, templateScript, 'utf8', (err) => {
+                if (err) throw err;
+                console.log("Data written successfully!");
+            });
+        });
+    }
+}
+
+function assetsToString(assets) {
+    if (!assets || assets.length === 0) {
+        return "No assets linked to this employee";
+    }
+
+    const assetStrings = assets.map((asset, index) => {
+        return `Asset ${index + 1}:
+            - Serial: ${asset.serial}
+            - Asset Tag: ${asset['asset-tag']}`;
+    });
+
+    return assetStrings.join('\n\n');
+}
