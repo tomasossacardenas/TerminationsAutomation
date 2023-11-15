@@ -7,7 +7,7 @@ const app = express();
 const fs=require('fs');
 const axios = require('axios');
 
-const {getCredentials, fillEmployeeInfo}=require('./functions')
+const {getCredentials, fillEmployeeInfo, fillTemplates}=require('./functions')
 
 console.log(process.env.USER);
 console.log(process.env.APPLICATION_PASSWORD);
@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
+
+var templates=['applications', 'hardware', 'infosec', 'salesforce', 'server', 'telecom']
 
 var employee = {
     firstName: null, 
@@ -28,6 +30,7 @@ var employee = {
     id:null, 
     manager:null, 
     jobTitle:null,
+    mainIncident:null,
     assets:[]
     }
 
@@ -47,6 +50,7 @@ async function main() {
     employee.firstName=getCredentials(JSON.stringify(incidentInfo)).workerName.split('.')[0];
     employee.surName=getCredentials(JSON.stringify(incidentInfo)).workerName.split('.')[1];
     employee.effectiveDate=getCredentials(JSON.stringify(incidentInfo)).effectiveDate;
+    employee.mainIncident=incidentInfo[0].id;
 
     //Fill the rest of employee Information
     personData=await goPerson(employee.firstName,employee.surName);
@@ -59,13 +63,15 @@ async function main() {
     
     //Fill employee assets list
     employee.assets = await goAssets("14b4b761-7071-4d7f-8e50-cca5c69727f3");
-    console.log(employee);
 
     const temporaryAssets = await getAssetsInfo(employee.assets);
 
     // Assign the temporary assets array to employee.assets
     employee.assets = temporaryAssets;
 
+    //Fill templates
+    fillTemplates(templates, employee);
+    createPartials(employee)
     console.log(employee);
 }
 main();
@@ -150,4 +156,47 @@ async function getAssetsInfo(assetIds) {
     await Promise.all(assetPromises);
 
     return temporaryAssets;
+}
+
+async function createPartials(employee){
+    requestData=createPartial("applications", employee)
+    try{
+        var url=`https://helpdesk.saintleo.edu/tas/api/incidents/`
+        console.log("Creating partials", url)
+        const response=await axios.post(url, requestData,{
+            auth: {
+                username: process.env.USER,
+                password: process.env.APPLICATION_PASSWORD
+            }
+        })
+        //console.log(JSON.stringify(response.data.dataSet));
+        //console.log(JSON.parse(JSON.stringify(response.data.dataSet)))
+        const data = response.data;
+
+        console.log(data)
+
+        
+    }catch(error){
+        console.error('Error:', error.response.status, error.response.data);
+    }   
+}
+
+function createPartial(department, employee){
+    var status="partial";
+    const requestText = fs.readFileSync(`./templates/${department.toLowerCase()}.txt`, 'utf8');
+    const briefDescription= `Employee Termination ${department.toUpperCase()} (${employee.networkLoginName})(${employee.employeeNumber})`; //need to add involuntary or not 
+    console.log(briefDescription)
+    const operatorGroup = "17cca995-78bb-4bbf-a127-f8b2a11142ad";
+    const operator= "7fb85852-c1c5-401b-875f-da4bf4bc9521" ;//tomas ossa
+
+    const requestData = {
+        "status":status, 
+        "request":requestText,
+        "briefDescription":briefDescription,
+        "operatorGroup" :  {"id" :  `${operatorGroup}`},
+        "operator": {"id": `${operator}`},
+        "mainIncident": { "id":`${employee.mainIncident}`}
+    }
+
+    return requestData;
 }

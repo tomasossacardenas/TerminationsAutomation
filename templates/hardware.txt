@@ -8,14 +8,10 @@ Term Status: (termStatus)
 
 Effective Date: (effectiveDate)
 
-Position:
+Position: (position)
 
 Supervisor Email:  (supervisorEmail)
 
-Asset: 
-
-- PC NAME:  
-
-- Asset Tag: 
+(assets)
 
  

@@ -1,16 +1,16 @@
 THIS IS TOMAS TESTING FOR AUTOMATION MESSAGE, IGNORE IT IF I TGETS TO YOU!
 
-Employee Termination Applications ((username)) ((sluid))
+Employee Termination Applications (brandy.pollicita) (1059770)
 
-Please revoke access for (username) (sluid)  
+Please revoke access for brandy.pollicita 1059770  
 
-(Convert task to “Push New AD account for (username) (sluid)” assigned to apps for STAFF to STU 
+(Convert task to “Push New AD account for brandy.pollicita 1059770” assigned to apps for STAFF to STU 
 
 Term Status: (termStatus)
 
-Effective Date: (effectiveDate)
+Effective Date: 08/15/2023
 
-Supervisor Email:  (supervisorEmail)
+Supervisor Email:  holly.atkins@saintleo.edu
 
 
 Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
