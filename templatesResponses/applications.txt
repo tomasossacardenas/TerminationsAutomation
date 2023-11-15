@@ -1,0 +1,42 @@
+THIS IS TOMAS TESTING FOR AUTOMATION MESSAGE, IGNORE IT IF I TGETS TO YOU!
+
+Employee Termination Applications (brandy.pollicita) (1059770)
+
+Please revoke access for brandy.pollicita 1059770  
+
+(Convert task to “Push New AD account for brandy.pollicita 1059770” assigned to apps for STAFF to STU 
+
+Term Status: (termStatus)
+
+Effective Date: 08/15/2023
+
+Supervisor Email:  holly.atkins@saintleo.edu
+
+
+Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
+
+XSVM screen  
+
+Screenshot prior to making changes. 
+
+Set  staff status to “Former” 
+
+Copy “Operator ID” 
+
+XSOD screen paste OPERATOR ID.  
+
+Screenshot before making changes.  
+
+Remove “*” 
+
+Max UI set to -0- 
+
+Max login set to -0- 
+
+Check STAC for current active class history. Add screen shot 
+
+If yes, needs Apps task for STAFF to STU 
+
+IASU for Alumni. 
+
+If yes, needs Apps task for STAFF to STU 

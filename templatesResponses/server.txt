@@ -1,0 +1,18 @@
+
+Employee Termination Server (brandy.pollicita) (1059770)
+
+Please revoke staff access for brandy.pollicita 1059770  
+
+Convert account from STAFF to STU/Alumni/Retired 
+
+Effective Date:  08/15/2023
+
+Term Type: (termStatus)
+
+Supervisor Email:  holly.atkins@saintleo.edu
+
+Forward Former Staff email: YES/NO 
+
+Forward Onedrive: YES/NO 
+
+Manually remove the person from listserv's 
