@@ -13,31 +13,31 @@ Position: Student
 Supervisor Email:  holly.atkins@saintleo.edu
 
 Asset 1:
-            - Serial: MP1Z6F81
-            - Asset Tag: 
-
-Asset 2:
-            - Serial: MP1Z6H9M
-            - Asset Tag: 
-
-Asset 3:
-            - Serial: MJ03FWMK
-            - Asset Tag: UTS001517
-
-Asset 4:
-            - Serial: MP1Z6F8M
-            - Asset Tag: 
-
-Asset 5:
-            - Serial: MP1Z6F8H
-            - Asset Tag: 
-
-Asset 6:
             - Serial: MP1Z6FA2
             - Asset Tag: 
 
-Asset 7:
+Asset 2:
+            - Serial: MJ03FWMK
+            - Asset Tag: UTS001517
+
+Asset 3:
             - Serial: USH807L0NN
             - Asset Tag: UTS002950
+
+Asset 4:
+            - Serial: MP1Z6H9M
+            - Asset Tag: 
+
+Asset 5:
+            - Serial: MP1Z6F8M
+            - Asset Tag: 
+
+Asset 6:
+            - Serial: MP1Z6F81
+            - Asset Tag: 
+
+Asset 7:
+            - Serial: MP1Z6F8H
+            - Asset Tag: 
 
  

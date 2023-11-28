@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const fs=require('fs');
 const axios = require('axios');
+const operatorGroups=require('./operatorGroups.json');
 
 const {getCredentials, fillEmployeeInfo, fillTemplates}=require('./functions')
 
@@ -19,6 +20,8 @@ app.get('/', (req, res) => {
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
 
 var templates=['applications', 'hardware', 'infosec', 'salesforce', 'server', 'telecom']
+var groups = ["TOPDeskAdmins", "EndpointManagement", "Infosec", "Salesforce", "Server", "Telecom"];//NOT THE CORRECT ONE (APPS TO TOPDESK ADMINS TO TEST)
+//var operatorGroups = ["Applications", "EndpointManagement", "Salesforce", "Infosec", "Server", "Telecom"]; // THIS IS THE CORRECT ONE FOR PRODUCTION
 
 var employee = {
     firstName: null, 
@@ -61,7 +64,7 @@ async function main() {
     var employeeData=await goPerson(managerFirst,managerLast);
     employee.manager= employeeData.email;
     
-    //Fill employee assets list
+    //Fill employee assets list receives employee object id
     employee.assets = await goAssets("14b4b761-7071-4d7f-8e50-cca5c69727f3");
 
     const temporaryAssets = await getAssetsInfo(employee.assets);
@@ -159,44 +162,58 @@ async function getAssetsInfo(assetIds) {
 }
 
 async function createPartials(employee){
-    requestData=createPartial("applications", employee)
-    try{
-        var url=`https://helpdesk.saintleo.edu/tas/api/incidents/`
-        console.log("Creating partials", url)
-        const response=await axios.post(url, requestData,{
-            auth: {
-                username: process.env.USER,
-                password: process.env.APPLICATION_PASSWORD
-            }
-        })
-        //console.log(JSON.stringify(response.data.dataSet));
-        //console.log(JSON.parse(JSON.stringify(response.data.dataSet)))
-        const data = response.data;
+    for (let i = 0; i < templates.length; i++ ){ //IN PRODUCTION TAKE OUT THE &&i<1 (this only crates the partial of topdeskadmins for testing)
+        let departmentName = templates[i];
+        let operatorGroup=groups[i];
+        requestData=createPartial(departmentName, operatorGroup, employee)
 
-        console.log(data)
-
-        
-    }catch(error){
-        console.error('Error:', error.response.status, error.response.data);
-    }   
+        try{
+            var url=`https://helpdesk.saintleo.edu/tas/api/incidents/`
+            console.log("Creating partials", url)
+            const response=await axios.post(url, requestData,{
+                auth: {
+                    username: process.env.USER,
+                    password: process.env.APPLICATION_PASSWORD
+                }
+            })
+            //console.log(JSON.stringify(response.data.dataSet));
+            //console.log(JSON.parse(JSON.stringify(response.data.dataSet)))
+            const data = response.data;
+    
+            console.log(data)
+    
+            
+        }catch(error){
+            console.error('Error:', error.response.status, error.response.data);
+        }   
+    };
+    
 }
 
-function createPartial(department, employee){
+function createPartial(department, group, employee){
     var status="partial";
-    const requestText = fs.readFileSync(`./templates/${department.toLowerCase()}.txt`, 'utf8');
+    const requestText = fs.readFileSync(`./templatesResponses/${department.toLowerCase()}.txt`, 'utf8');
     const briefDescription= `Employee Termination ${department.toUpperCase()} (${employee.networkLoginName})(${employee.employeeNumber})`; //need to add involuntary or not 
     console.log(briefDescription)
-    const operatorGroup = "17cca995-78bb-4bbf-a127-f8b2a11142ad";
-    const operator= "7fb85852-c1c5-401b-875f-da4bf4bc9521" ;//tomas ossa
+
+    const operatorGroupObject = operatorGroups.find(entry => Object.keys(entry)[0] === group);
+    const operatorGroup = operatorGroupObject ? operatorGroupObject[group] : null;
+
+    console.log("this is operator group", operatorGroup);
+    //const operator= operatorGroup ;//tomas ossa
 
     const requestData = {
         "status":status, 
         "request":requestText,
         "briefDescription":briefDescription,
         "operatorGroup" :  {"id" :  `${operatorGroup}`},
-        "operator": {"id": `${operator}`},
+        "operator": {"id": `${operatorGroup}`},
         "mainIncident": { "id":`${employee.mainIncident}`}
     }
 
     return requestData;
+}
+
+function sendEmail(){
+    
 }
