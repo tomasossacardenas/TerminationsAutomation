@@ -1,17 +1,25 @@
 Employee Termination Telecom ((username)) ((sluid)) 
-
+<br>
+<br>
 Revoke access to Telecom Services and collect phone needed. (username) (sluid) 
-
+<br>
+<br>
 Effective Date: (effectiveDate)
-
+<br>
+<br>
 Current Extension:  
-
+<br>
+<br>
 Forward Extension to:  
-
+<br>
+<br>
 Forward voicemail:  
-
+<br>
+<br>
 Forward voicemail to: 
-
+<br>
+<br>
 Location: 
-
+<br>
+<br>
 Supervisor Email: (supervisorEmail)

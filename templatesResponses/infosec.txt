@@ -1,23 +1,34 @@
 Employee Termintion InfoSec (brandy.pollicita) (1059770)
-
+<br>
+<br>
 Please communicate with HR and collect hardware associated to terminated personnel.  
-
+<br>
+<br>
 Employee Term: brandy.pollicita 1059770  
-
+<br>
+<br>
 Term Status: (termStatus)
-
+<br>
+<br>
 Effective Date: 08/15/2023
-
+<br>
+<br>
 Location:  
-
+<br>
+<br>
 Supervisor Email:  holly.atkins@saintleo.edu
-
+<br>
+<br>
 Data Transfer: YES/NO 
-
+<br>
+<br>
 Forward Onedrive: YES/NO 
-
+<br>
+<br>
 Asset: 
-
+<br>
+<br>
 - PC NAME:  
-
+<br>
+<br>
 - Asset Tag: 

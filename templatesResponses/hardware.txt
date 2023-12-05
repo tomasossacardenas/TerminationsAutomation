@@ -1,43 +1,50 @@
 Employee Termination Hardware (brandy.pollicita) (1059770)
-
+<br>
+<br>
 Please communicate with InfoSec for reporting department and collect all hardware associated to terminated personnel.  
-
+<br>
+<br>
 Employee Term: brandy.pollicita 1059770 
-
+<br>
+<br>
 Term Status: (termStatus)
-
+<br>
+<br>
 Effective Date: 08/15/2023
-
+<br>
+<br>
 Position: Student
-
+<br>
+<br>
 Supervisor Email:  holly.atkins@saintleo.edu
-
+<br>
+<br>
 Asset 1:
-            - Serial: MP1Z6FA2
-            - Asset Tag: 
-
-Asset 2:
-            - Serial: MJ03FWMK
-            - Asset Tag: UTS001517
-
-Asset 3:
-            - Serial: USH807L0NN
-            - Asset Tag: UTS002950
-
-Asset 4:
             - Serial: MP1Z6H9M
             - Asset Tag: 
 
-Asset 5:
-            - Serial: MP1Z6F8M
+Asset 2:
+            - Serial: USH807L0NN
+            - Asset Tag: UTS002950
+
+Asset 3:
+            - Serial: MP1Z6FA2
             - Asset Tag: 
 
-Asset 6:
+Asset 4:
+            - Serial: MP1Z6F8H
+            - Asset Tag: 
+
+Asset 5:
             - Serial: MP1Z6F81
             - Asset Tag: 
 
-Asset 7:
-            - Serial: MP1Z6F8H
+Asset 6:
+            - Serial: MP1Z6F8M
             - Asset Tag: 
+
+Asset 7:
+            - Serial: MJ03FWMK
+            - Asset Tag: UTS001517
 
  

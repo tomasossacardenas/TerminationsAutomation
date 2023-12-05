@@ -1,13 +1,18 @@
 Employee Termination Salesforce (brandy.pollicita) (1059770)
-
+<br>
+<br>
 Revoke Salesforce access to the following user: 
-
+<br>
+<br>
 Username: brandy.pollicita 
-
+<br>
+<br>
 Email: : brandy.pollicita@saintleo.edu 
-
+<br>
+<br>
 Effective Date:  08/15/2023
-
+<br>
+<br>
 Supervisor email:  holly.atkins@saintleo.edu 
 
  

@@ -1,42 +1,58 @@
-THIS IS TOMAS TESTING FOR AUTOMATION MESSAGE, IGNORE IT IF IT GETS TO YOU!
-
-Employee Termination Applications (brandy.pollicita) (1059770)
-
-Please revoke access for brandy.pollicita 1059770  
-
-(Convert task to “Push New AD account for brandy.pollicita 1059770” assigned to apps for STAFF to STU 
-
+Employee Termination Applications (brandy.pollicita) (1059770) 
+<br>
+<br>
+Please revoke access for brandy.pollicita 1059770  <br>
+<br>
+<br>
+(Convert task to “Push New AD account for brandy.pollicita 1059770” assigned to apps for STAFF to STU&nsbp;
+<br>
+<br>
 Term Status: (termStatus)
-
-Effective Date: 08/15/2023
-
+<br>
+<br>
+Effective Date: <strong>08/15/2023</strong>
+<br>
+<br>
 Supervisor Email:  holly.atkins@saintleo.edu
-
-
+<br>
+<br>
 Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
-
+<br>
+<br>
 XSVM screen  
-
+<br>
+<br>
 Screenshot prior to making changes. 
-
+<br>
+<br>
 Set  staff status to “Former” 
-
+<br>
+<br>
 Copy “Operator ID” 
-
+<br>
+<br>
 XSOD screen paste OPERATOR ID.  
-
+<br>
+<br>
 Screenshot before making changes.  
-
+<br>
+<br>
 Remove “*” 
-
+<br>
+<br>
 Max UI set to -0- 
-
+<br>
+<br>
 Max login set to -0- 
-
+<br>
+<br>
 Check STAC for current active class history. Add screen shot 
-
+<br>
+<br>
 If yes, needs Apps task for STAFF to STU 
-
+<br>
+<br>
 IASU for Alumni. 
-
+<br>
+<br>
 If yes, needs Apps task for STAFF to STU 

@@ -1,42 +1,58 @@
-THIS IS TOMAS TESTING FOR AUTOMATION MESSAGE, IGNORE IT IF IT GETS TO YOU!
-
-Employee Termination Applications ((username)) ((sluid))
-
-Please revoke access for (username) (sluid)  
-
-(Convert task to “Push New AD account for (username) (sluid)” assigned to apps for STAFF to STU 
-
+Employee Termination Applications ((username)) ((sluid)) 
+<br>
+<br>
+Please revoke access for (username) (sluid)  <br>
+<br>
+<br>
+(Convert task to “Push New AD account for (username) (sluid)” assigned to apps for STAFF to STU&nsbp;
+<br>
+<br>
 Term Status: (termStatus)
-
-Effective Date: (effectiveDate)
-
+<br>
+<br>
+Effective Date: <strong>(effectiveDate)</strong>
+<br>
+<br>
 Supervisor Email:  (supervisorEmail)
-
-
+<br>
+<br>
 Datatel Access updated (If Access is enabled complete.) (Omit if no access) 
-
+<br>
+<br>
 XSVM screen  
-
+<br>
+<br>
 Screenshot prior to making changes. 
-
+<br>
+<br>
 Set  staff status to “Former” 
-
+<br>
+<br>
 Copy “Operator ID” 
-
+<br>
+<br>
 XSOD screen paste OPERATOR ID.  
-
+<br>
+<br>
 Screenshot before making changes.  
-
+<br>
+<br>
 Remove “*” 
-
+<br>
+<br>
 Max UI set to -0- 
-
+<br>
+<br>
 Max login set to -0- 
-
+<br>
+<br>
 Check STAC for current active class history. Add screen shot 
-
+<br>
+<br>
 If yes, needs Apps task for STAFF to STU 
-
+<br>
+<br>
 IASU for Alumni. 
-
+<br>
+<br>
 If yes, needs Apps task for STAFF to STU 

@@ -169,7 +169,7 @@ async function createPartials(employee){
 
         try{
             var url=`https://helpdesk.saintleo.edu/tas/api/incidents/`
-            console.log("Creating partials", url)
+            console.log("Creating partial")
             const response=await axios.post(url, requestData,{
                 auth: {
                     username: process.env.USER,
@@ -180,9 +180,12 @@ async function createPartials(employee){
             //console.log(JSON.parse(JSON.stringify(response.data.dataSet)))
             const data = response.data;
     
-            console.log(data)
+            //console.log(data.operatorGroup.name, data.number);
     
+
+
             
+            //await sendEmail("tomasossaefcsl@gmail.com",data.operatorGroup.name,"A partial Link", data.number ,data.request)
         }catch(error){
             console.error('Error:', error.response.status, error.response.data);
         }   
@@ -190,6 +193,7 @@ async function createPartials(employee){
     
 }
 
+//IT RETURNS THE DATA TO CREATE A PARTIAL
 function createPartial(department, group, employee){
     var status="partial";
     const requestText = fs.readFileSync(`./templatesResponses/${department.toLowerCase()}.txt`, 'utf8');
@@ -214,6 +218,32 @@ function createPartial(department, group, employee){
     return requestData;
 }
 
-function sendEmail(){
-    
+async function sendEmail(email, department, partialLink, partialNumber, requestBody){
+    var reqBody=fs.readFileSync(`./public/partialEmail.txt`, 'utf8');
+    reqBody=reqBody.replaceAll("((DEPARTMENT))", department);
+    reqBody=reqBody.replaceAll("((PARTIAL_LINK))", partialLink);
+    reqBody=reqBody.replaceAll("((PARTIAL_NUMBER))", partialNumber);
+    reqBody=reqBody.replaceAll("((REQUEST_BODY))", requestBody);
+
+    body={
+        "to": "tomas.ossa@email.saintleo.edu, tomasossaefcsl@gmail.com",
+        "subject": "Update on your request",
+        "body": reqBody,
+        "isHtmlBody": true,
+        "requestDeliveryReceipt": false,
+        "requestReadReceipt": false,
+        "suppressAutomaticReplies": false
+    }
+
+    axios.post("https://helpdesk.saintleo.edu/services/email-v1/api/send", body,{
+        auth: {
+        username: process.env.USER,
+        password: process.env.APPLICATION_PASSWORD
+    }})
+      .then(response => {
+        console.log('Email sent successfully:');
+      })
+      .catch(error => {
+        console.error('Error sending email:', error.message);
+      });
 }
